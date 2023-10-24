@@ -10,14 +10,15 @@ namespace Solsys
     {
         public string Nev { get; set; }
         public int HoldSzam { get; set; }
-        public double TerfogatArany { get; set; }
+        public float TerfogatArany { get; set; }
 
         public Planet(string sor)
         {
+            sor = sor.Replace('.', ',');
             var darabok = sor.Split(';');
             this.Nev = darabok[0];
             this.HoldSzam = int.Parse(darabok[1]);
-            this.TerfogatArany = Convert.ToDouble(darabok[2]);
+            this.TerfogatArany = float.Parse(darabok[2]);
         }
     }
 }
